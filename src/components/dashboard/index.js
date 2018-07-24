@@ -4,7 +4,7 @@ import {GoogleLogout} from 'react-google-oauth';
 import {logoutAuthUser} from '../../utils/auth';
 import Button from '@material-ui/core/Button';
 
-import Map from '../maps/Map';
+import MapContainer from '../maps/MapContainer';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class Dashboard extends Component {
         <Button variant="contained">
           Hello World
         </Button>
-        <Map />
+        <MapContainer />
       </div>
     );
   }

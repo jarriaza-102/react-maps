@@ -10,6 +10,7 @@
     "react-google-login": "^3.2.1",
     "react-google-oauth": "^1.0.0",
     "react-router-dom": "^4.3.1",
+    "google-maps-react": "no se",
     "react-scripts": "1.1.4"
   },
   "scripts": {
