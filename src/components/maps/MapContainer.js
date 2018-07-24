@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import GoogleSuggest from './GoogleSuggest';
 
 export class MapContainer extends Component {
   constructor(props) {
@@ -7,8 +8,16 @@ export class MapContainer extends Component {
     this.state = {
       showingInfoWindow: false,
     	activeMarker: {},
-      selectedPlace: {}
+      selectedPlace: {},
+      placeToSearch: '',
+      currentLocation: {
+        lat: 14.6070862,
+        lng: -90.509798
+      },
+      value: ''
     };
+    this.onPlaceToSearchChanged = this.onPlaceToSearchChanged.bind(this);
+
   }
   
    componentDidMount() {
@@ -25,26 +34,49 @@ export class MapContainer extends Component {
       });
     }
   }
-  
-  onMarkerClick(props, marker, e) {
-    console.log('marker');
-  }
 
-  onMapClicked(props) {
-    console.log('Clicked');
+ onMapClicked = (props) => {
+   console.log(props);
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      })
+    }
+  };
+
+	onPlaceToSearchChanged(event) {
+    this.setState({
+      placeToSearch: event.target.value
+    });
   }
   
-  render() {
+  render() {    
     return (
-      <Map google={this.props.google} zoom={14}
-        	initialCenter={{
-            lat: 14.6070862,
-            lng: -90.509798
-          }}>
- 
-        <Marker onClick={this.onMarkerClick}
-                name={'Current location'} />
-      </Map>
+      <div>
+        <GoogleSuggest value={this.state.value}/>
+        <br></br>
+        <Map google={this.props.google} 
+          zoom={14}
+          initialCenter={{
+             lat: this.state.currentLocation.lat,
+             lng: this.state.currentLocation.lng
+          }}
+          onClick={this.onMapClicked}
+          >
+
+          <Marker
+            title={'The marker`s title will appear as a tooltip.'}
+            name={'Universidad Francisco Marroquín'}
+            position={{lat: 14.606868, lng: -90.507595}} />
+
+          <Marker
+            name={'Sixtino I'}
+            position={{lat: 14.6070862, lng: -90.509798}} />
+          <Marker />
+
+        </Map>
+      </div>
     );
   }
 }

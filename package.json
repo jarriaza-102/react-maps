@@ -4,13 +4,13 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.4.1",
-    "google-maps-react": "^2.0.2",
+    "google-maps-react": "2.0.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-google-login": "^3.2.1",
     "react-google-oauth": "^1.0.0",
+    "react-google-places-suggest": "^3.5.0",
     "react-router-dom": "^4.3.1",
-    "google-maps-react": "no se",
     "react-scripts": "1.1.4"
   },
   "scripts": {
