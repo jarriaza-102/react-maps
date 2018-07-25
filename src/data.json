@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "country": "Guatemala",
+      "catastrophes": [
+        {
+          "name": "Volcan de Pacaya",
+          "description": "Erupción",
+          "zones": [
+            {
+              "id": 1,
+              "lat": 14.3823278,
+              "lng": -90.6102619
+            }
+          ]
+        },
+        {
+          "name": "Derrumbe",
+          "description": "Carreteta al Atlantico",
+          "zones": [
+            {
+              "id": 2,
+              "lat": 14.6209713,
+              "lng": -90.5137918
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "country": "Honduras",
+      "catastrophes": [
+        {
+          "name": "Roatan",
+          "description": "Tsunami",
+          "zones": [
+            {
+              "id": 1,
+              "lat": 15.4751928,
+              "lng": -89.643303
+            }
+          ]
+        },
+        {
+          "name": "San Pedro Sula",
+          "description": "Terremoto",
+          "zones": [
+            {
+              "id": 2,
+              "lat": 15.5198897,
+              "lng": -88.0555303
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

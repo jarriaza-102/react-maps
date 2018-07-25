@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {GoogleAPI} from 'react-google-oauth'
-import Router from './route';
-
+import {MapContainer} from "./components/maps/MapContainer";
 import './App.css';
+import Dashboard from "./components/dashboard/index";
 
 class App extends Component {
   constructor(props) {
@@ -12,9 +12,9 @@ class App extends Component {
   
   render() {
     return (
-      <GoogleAPI clientId="93296413379-iuigj4fhvq150gogp2i2cbvudcpncj12.apps.googleusercontent.com">
-         <Router />
-      </GoogleAPI>
+        <GoogleAPI clientId="93296413379-iuigj4fhvq150gogp2i2cbvudcpncj12.apps.googleusercontent.com">
+          <Dashboard />
+        </GoogleAPI>
     );
   }
 }
